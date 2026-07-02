@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Namoza Healthcare - Appointment Booking Demo</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="booking-card">
+
+        <header>
+
+            <h1>Namoza Healthcare</h1>
+
+            <p>
+                Book an Expert Orthopaedic Consultation
+            </p>
+
+        </header>
+
+        <div class="quick-actions">
+
+    <button id="callNow" class="action-btn">
+        📞 Call Clinic
+    </button>
+
+    <button id="whatsappBtn" class="action-btn whatsapp">
+        💬 WhatsApp
+    </button>
+
+    <button id="guideBtn" class="action-btn guide">
+        📄 Download Patient Guide
+    </button>
+
+</div>
+
+        <!-- Progress -->
+
+        <div class="progress-bar">
+
+            <div class="step active" id="indicator1">
+                <span>1</span>
+                <small>Clinic</small>
+            </div>
+
+            <div class="line"></div>
+
+            <div class="step" id="indicator2">
+                <span>2</span>
+                <small>Patient</small>
+            </div>
+
+            <div class="line"></div>
+
+            <div class="step" id="indicator3">
+                <span>3</span>
+                <small>Review</small>
+            </div>
+
+        </div>
+
+        <!-- ============================= -->
+        <!-- STEP 1 -->
+        <!-- ============================= -->
+
+        <section id="step1" class="step-page active-page">
+
+            <h2>Step 1 - Select Clinic</h2>
+
+            <label>City</label>
+
+            <select id="city">
+
+                <option value="">Select City</option>
+
+                <option>Bengaluru</option>
+
+                <option>Hyderabad</option>
+
+                <option>Chennai</option>
+
+            </select>
+
+            <label>Clinic Location</label>
+
+            <select id="clinic">
+
+                <option value="">Select Clinic</option>
+
+                <option>Whitefield</option>
+
+                <option>HSR Layout</option>
+
+                <option>Indiranagar</option>
+
+                <option>Banjara Hills</option>
+
+                <option>Anna Nagar</option>
+
+            </select>
+
+            <label>Specialty</label>
+
+            <select id="specialty">
+
+                <option value="">Select Specialty</option>
+
+                <option>Orthopaedics</option>
+
+                <option>Sports Injury</option>
+
+                <option>Spine Care</option>
+
+                <option>Joint Replacement</option>
+
+            </select>
+
+            <button id="next1">
+
+                Continue →
+
+            </button>
+
+        </section>
+
+        <!-- ============================= -->
+        <!-- STEP 2 -->
+        <!-- ============================= -->
+
+        <section id="step2" class="step-page">
+
+            <h2>Step 2 - Patient Details</h2>
+
+            <label>Full Name</label>
+
+            <input
+                    type="text"
+                    id="name"
+                    placeholder="Enter your full name">
+
+            <label>Phone Number</label>
+
+            <input
+                    type="tel"
+                    id="phone"
+                    placeholder="Enter phone number">
+
+            <label>Preferred Appointment Date</label>
+
+            <input
+                    type="date"
+                    id="date">
+
+            <div class="buttons">
+
+                <button class="secondary" id="back1">
+
+                    ← Back
+
+                </button>
+
+                <button id="next2">
+
+                    Continue →
+
+                </button>
+
+            </div>
+
+        </section>
+
+        <!-- ============================= -->
+        <!-- STEP 3 -->
+        <!-- ============================= -->
+
+        <section id="step3" class="step-page">
+
+            <h2>Review Appointment</h2>
+
+            <div class="review">
+
+                <p><strong>City:</strong> <span id="reviewCity"></span></p>
+
+                <p><strong>Clinic:</strong> <span id="reviewClinic"></span></p>
+
+                <p><strong>Specialty:</strong> <span id="reviewSpecialty"></span></p>
+
+                <p><strong>Name:</strong> <span id="reviewName"></span></p>
+
+                <p><strong>Phone:</strong> <span id="reviewPhone"></span></p>
+
+                <p><strong>Date:</strong> <span id="reviewDate"></span></p>
+
+            </div>
+
+            <div class="buttons">
+
+                <button class="secondary" id="back2">
+
+                    ← Back
+
+                </button>
+
+                <button id="confirmBtn">
+
+                    Confirm Booking
+
+                </button>
+
+            </div>
+
+        </section>
+
+        <!-- ============================= -->
+        <!-- SUCCESS -->
+        <!-- ============================= -->
+
+        <section id="success" class="step-page">
+
+            <div class="success-icon">
+
+                ✅
+
+            </div>
+
+            <h2>
+
+                Appointment Booked Successfully
+
+            </h2>
+
+            <p>
+
+                Booking ID:
+
+            </p>
+
+            <h3 id="bookingId"></h3>
+
+            <p>
+
+                Thank you for choosing Namoza Healthcare.
+
+            </p>
+
+        </section>
+
+    </div>
+
+    <!-- Event Log -->
+
+    <div class="event-log">
+
+        <h3>Event Log</h3>
+
+        <div id="logs">
+
+            Waiting for events...
+
+        </div>
+
+    </div>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>

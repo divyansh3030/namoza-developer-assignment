@@ -1,0 +1,468 @@
+/* ===========================
+   Google Font
+=========================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+/* ===========================
+   Reset
+=========================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Inter',sans-serif;
+}
+
+body{
+
+    background:#f4f8fb;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    min-height:100vh;
+
+    padding:30px;
+
+}
+
+/* ===========================
+   Layout
+=========================== */
+
+.container{
+
+    display:flex;
+
+    gap:30px;
+
+    align-items:flex-start;
+
+    max-width:1200px;
+
+    width:100%;
+
+}
+
+.booking-card{
+
+    flex:2;
+
+    background:white;
+
+    border-radius:18px;
+
+    padding:35px;
+
+    box-shadow:0 15px 40px rgba(0,0,0,.08);
+
+}
+
+.event-log{
+
+    flex:1;
+
+    background:white;
+
+    border-radius:18px;
+
+    padding:25px;
+
+    box-shadow:0 15px 40px rgba(0,0,0,.08);
+
+}
+
+.event-log h3{
+
+    margin-bottom:15px;
+
+    color:#1565c0;
+
+}
+
+#logs{
+
+    background:#f8fafc;
+
+    border-radius:10px;
+
+    padding:15px;
+
+    height:420px;
+
+    overflow-y:auto;
+
+    font-size:14px;
+
+    line-height:1.6;
+
+}
+
+/* ===========================
+   Header
+=========================== */
+
+header{
+
+    text-align:center;
+
+    margin-bottom:35px;
+
+}
+
+header h1{
+
+    color:#1565c0;
+
+    font-size:34px;
+
+    margin-bottom:10px;
+
+}
+
+header p{
+
+    color:#555;
+
+}
+
+/* ===========================
+   Quick Actions
+=========================== */
+
+.quick-actions{
+
+    display:flex;
+
+    gap:15px;
+
+    margin-bottom:30px;
+
+}
+
+.action-btn{
+
+    flex:1;
+
+    padding:14px;
+
+    border:none;
+
+    border-radius:10px;
+
+    cursor:pointer;
+
+    font-size:15px;
+
+    font-weight:600;
+
+    transition:.3s;
+
+    background:#1976d2;
+
+    color:white;
+
+}
+
+.action-btn:hover{
+
+    transform:translateY(-2px);
+
+    box-shadow:0 10px 20px rgba(0,0,0,.15);
+
+}
+
+.whatsapp{
+
+    background:#25D366;
+
+}
+
+.guide{
+
+    background:#ff9800;
+
+}
+
+/* ===========================
+   Progress
+=========================== */
+
+.progress-bar{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    margin-bottom:40px;
+
+}
+
+.step{
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    gap:6px;
+
+    color:#9e9e9e;
+
+}
+
+.step span{
+
+    width:45px;
+
+    height:45px;
+
+    border-radius:50%;
+
+    background:#d6d6d6;
+
+    color:white;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    font-weight:bold;
+
+}
+
+.step.active span{
+
+    background:#1976d2;
+
+}
+
+.step.active{
+
+    color:#1976d2;
+
+}
+
+.line{
+
+    flex:1;
+
+    height:4px;
+
+    background:#ddd;
+
+    margin:0 10px;
+
+}
+
+/* ===========================
+   Forms
+=========================== */
+
+.step-page{
+
+    display:none;
+
+}
+
+.active-page{
+
+    display:block;
+
+}
+
+.step-page h2{
+
+    margin-bottom:25px;
+
+    color:#1565c0;
+
+}
+
+label{
+
+    display:block;
+
+    margin-top:18px;
+
+    margin-bottom:8px;
+
+    font-weight:600;
+
+}
+
+select,
+input{
+
+    width:100%;
+
+    padding:14px;
+
+    border:1px solid #ccc;
+
+    border-radius:8px;
+
+    font-size:15px;
+
+}
+
+select:focus,
+input:focus{
+
+    outline:none;
+
+    border-color:#1976d2;
+
+}
+
+/* ===========================
+   Buttons
+=========================== */
+
+button{
+
+    margin-top:30px;
+
+    background:#1976d2;
+
+    color:white;
+
+    border:none;
+
+    padding:14px 28px;
+
+    border-radius:8px;
+
+    cursor:pointer;
+
+    font-size:16px;
+
+    transition:.3s;
+
+}
+
+button:hover{
+
+    background:#0d47a1;
+
+}
+
+.secondary{
+
+    background:#757575;
+
+}
+
+.secondary:hover{
+
+    background:#555;
+
+}
+
+.buttons{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+}
+
+/* ===========================
+   Review
+=========================== */
+
+.review{
+
+    background:#f7f9fc;
+
+    padding:20px;
+
+    border-radius:12px;
+
+    margin-top:20px;
+
+}
+
+.review p{
+
+    margin:15px 0;
+
+}
+
+/* ===========================
+   Success
+=========================== */
+
+#success{
+
+    text-align:center;
+
+}
+
+.success-icon{
+
+    font-size:65px;
+
+    margin-bottom:20px;
+
+}
+
+#bookingId{
+
+    color:#1976d2;
+
+    margin:15px 0;
+
+}
+
+/* ===========================
+   Mobile
+=========================== */
+
+@media(max-width:900px){
+
+.container{
+
+    flex-direction:column;
+
+}
+
+.event-log{
+
+    width:100%;
+
+}
+
+.booking-card{
+
+    width:100%;
+
+}
+
+.buttons{
+
+    flex-direction:column;
+
+    gap:15px;
+
+}
+
+button{
+
+    width:100%;
+
+}
+
+}

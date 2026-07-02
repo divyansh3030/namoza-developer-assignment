@@ -1,0 +1,989 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- ==========================================================
+         ORTHONOW - CONSULTATION LANDING PAGE
+         Assignment: Namoza Developer Task 02
+         Tech Stack: HTML5 + CSS3 + Vanilla JavaScript
+         Author: Divyansh Kakkar
+    =========================================================== -->
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>OrthoNow | Expert Orthopaedic Consultation</title>
+
+    <meta name="description"
+        content="Book an expert orthopaedic consultation at OrthoNow. Experienced specialists for knee and back pain across 9 clinics in Bengaluru.">
+
+    <style>
+        /* ======================================================
+           RESET
+        ====================================================== */
+
+        *,
+        *::before,
+        *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* ======================================================
+           ROOT VARIABLES
+        ====================================================== */
+
+        :root {
+
+            --primary: #0A66C2;
+            --primary-dark: #084C91;
+
+            --secondary: #1E293B;
+
+            --success: #0F9D58;
+
+            --background: #F7FAFC;
+
+            --white: #FFFFFF;
+
+            --text: #1F2937;
+
+            --muted: #6B7280;
+
+            --border: #E5E7EB;
+
+            --shadow: 0 15px 40px rgba(0, 0, 0, .08);
+
+            --radius: 16px;
+
+            --transition: .3s ease;
+
+        }
+
+        /* ======================================================
+           BODY
+        ====================================================== */
+
+        body {
+
+            font-family:
+                Inter,
+                Segoe UI,
+                Arial,
+                sans-serif;
+
+            background: var(--background);
+
+            color: var(--text);
+
+            line-height: 1.6;
+
+            overflow-x: hidden;
+
+        }
+
+        img {
+
+            display: block;
+
+            max-width: 100%;
+
+        }
+
+        a {
+
+            text-decoration: none;
+
+            color: inherit;
+
+        }
+
+        button,
+        input {
+
+            font-family: inherit;
+
+        }
+
+        /* ======================================================
+           CONTAINER
+        ====================================================== */
+
+        .container {
+
+            width: min(1180px, 92%);
+
+            margin: auto;
+
+        }
+
+        /* ======================================================
+           HERO
+        ====================================================== */
+
+        .hero {
+
+            min-height: 100vh;
+
+            display: flex;
+
+            align-items: center;
+
+            padding: 70px 0;
+
+        }
+
+        .hero-wrapper {
+
+            display: grid;
+
+            grid-template-columns: 1fr 1fr;
+
+            gap: 60px;
+
+            align-items: center;
+
+        }
+
+        /* ======================================================
+           LOGO
+        ====================================================== */
+
+        .logo {
+
+            display: inline-flex;
+
+            align-items: center;
+
+            gap: 10px;
+
+            margin-bottom: 24px;
+
+            font-size: 1.45rem;
+
+            font-weight: 800;
+
+            color: var(--primary);
+
+        }
+
+        .logo-icon {
+
+            width: 46px;
+
+            height: 46px;
+
+            border-radius: 50%;
+
+            background: var(--primary);
+
+            color: white;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            font-size: 22px;
+
+        }
+
+        /* ======================================================
+           HERO TEXT
+        ====================================================== */
+
+        .hero h1 {
+
+            font-size: clamp(2.2rem, 4vw, 3.6rem);
+
+            line-height: 1.15;
+
+            margin-bottom: 18px;
+
+            color: var(--secondary);
+
+            max-width: 500px;
+
+        }
+
+        .hero p {
+
+            color: var(--muted);
+
+            font-size: 1.1rem;
+
+            margin-bottom: 30px;
+
+            max-width: 620px;
+
+        }
+
+        /* ======================================================
+           TRUST BADGES
+        ====================================================== */
+
+        .badges {
+
+            display: flex;
+
+            flex-wrap: wrap;
+
+            gap: 14px;
+
+            margin-bottom: 35px;
+
+        }
+
+        .badge {
+
+            background: white;
+
+            border: 1px solid var(--border);
+
+            border-radius: 999px;
+
+            padding: 12px 18px;
+
+            font-size: .92rem;
+
+            font-weight: 600;
+
+            box-shadow: 0 6px 18px rgba(0,0,0,.04);
+
+        }
+
+        /* ======================================================
+           FORM CARD
+        ====================================================== */
+
+        .form-card {
+
+            background: var(--white);
+
+            border-radius: var(--radius);
+
+            padding: 32px;
+
+            box-shadow: var(--shadow);
+
+        }
+
+        .form-card h2 {
+
+            font-size: 1.45rem;
+
+            margin-bottom: 8px;
+
+        }
+
+        .form-card p {
+
+            margin-bottom: 24px;
+
+            font-size: .95rem;
+
+        }
+
+        .field {
+
+            margin-bottom: 18px;
+
+        }
+
+        label {
+
+            display: block;
+
+            font-weight: 600;
+
+            margin-bottom: 8px;
+
+        }
+
+        input {
+
+            width: 100%;
+
+            padding: 15px;
+
+            border-radius: 12px;
+
+            border: 1px solid var(--border);
+
+            font-size: 1rem;
+
+            transition: var(--transition);
+
+        }
+
+        input:focus {
+
+            outline: none;
+
+            border-color: var(--primary);
+
+            box-shadow: 0 0 0 4px rgba(10,102,194,.12);
+
+        }
+
+        .cta-btn {
+
+            width: 100%;
+
+            padding: 16px;
+
+            background: var(--primary);
+
+            color: white;
+
+            border: none;
+
+            border-radius: 12px;
+
+            cursor: pointer;
+
+            font-size: 1rem;
+
+            font-weight: 700;
+
+            transition: var(--transition);
+
+        }
+
+        .cta-btn:hover {
+
+            background: var(--primary-dark);
+
+            transform: translateY(-2px);
+
+        }
+
+        .note {
+
+            margin-top: 16px;
+
+            font-size: .88rem;
+
+            color: var(--muted);
+
+            text-align: center;
+
+        }
+/* ======================================================
+   IMAGE
+====================================================== */
+
+.hero-image {
+
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+
+}
+
+.hero-image img {
+
+    width: 100%;
+    max-width: 380px;      /* Controls the image size */
+    height: auto;
+
+    border-radius: 18px;
+
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.08);
+
+}
+        /* ======================================================
+           TRUST SECTION
+        ====================================================== */
+
+        .trust {
+
+            padding: 80px 0;
+
+        }
+
+        .trust-grid {
+
+            display: grid;
+
+            grid-template-columns: repeat(3,1fr);
+
+            gap: 28px;
+
+        }
+
+        .trust-card {
+
+            background: white;
+
+            padding: 30px;
+
+            border-radius: 18px;
+
+            text-align: center;
+
+            box-shadow: 0 10px 30px rgba(0,0,0,.05);
+
+        }
+
+        .trust-card h3 {
+
+            color: var(--primary);
+
+            margin-bottom: 10px;
+
+        }
+
+        /* ======================================================
+           REVIEW
+        ====================================================== */
+
+        .review {
+
+            padding-bottom: 80px;
+
+        }
+
+        .review-box {
+
+            background: white;
+
+            border-radius: 20px;
+
+            padding: 40px;
+
+            text-align: center;
+
+            box-shadow: var(--shadow);
+
+        }
+
+        .stars {
+
+            color: #F4B400;
+
+            font-size: 1.3rem;
+
+            margin-bottom: 15px;
+
+        }
+
+        /* ======================================================
+           FOOTER
+        ====================================================== */
+
+        footer {
+
+            background: var(--secondary);
+
+            color: white;
+
+            padding: 25px;
+
+            text-align: center;
+
+            font-size: .92rem;
+
+        }
+
+        /* ======================================================
+           SUCCESS STATE
+        ====================================================== */
+
+        .success-message {
+
+            display: none;
+
+            text-align: center;
+
+            padding: 35px;
+
+        }
+
+        .success-message h2 {
+
+            color: var(--success);
+
+            margin-bottom: 12px;
+
+        }
+
+        /* ======================================================
+           MOBILE
+        ====================================================== */
+
+        @media (max-width:900px) {
+
+            .hero {
+
+                padding: 50px 0;
+
+            }
+
+            .hero-wrapper {
+
+                grid-template-columns: 1fr;
+
+            }
+
+            .hero-image {
+
+                order: -1;
+
+            }
+
+            .trust-grid {
+
+                grid-template-columns: 1fr;
+
+            }
+
+            .hero h1 {
+
+                font-size: 2.2rem;
+
+            }
+
+            .form-card {
+
+                padding: 24px;
+
+            }
+
+        }
+    </style>
+
+</head>
+
+<body>
+
+        <!-- ======================================================
+         HERO SECTION
+    ======================================================= -->
+
+    <main>
+
+        <section class="hero">
+
+            <div class="container">
+
+                <div class="hero-wrapper">
+
+                    <!-- Left Content -->
+
+                    <div class="hero-content">
+
+                        <div class="logo">
+
+                            <div class="logo-icon">🦴</div>
+
+                            <span>OrthoNow</span>
+
+                        </div>
+
+                        <h1>
+                            Get an Expert Orthopaedic Opinion
+                        </h1>
+
+                        <p>
+                            Experiencing knee or back pain?
+                            Consult experienced orthopaedic specialists across
+                            <strong>9 clinics in Bengaluru</strong> and take the
+                            first step towards a pain-free life.
+                        </p>
+
+                        <div class="badges">
+
+                            <div class="badge">
+                                ⭐ 4.8/5 Patient Rating
+                            </div>
+
+                            <div class="badge">
+                                👨‍⚕️ 25+ Specialists
+                            </div>
+
+                            <div class="badge">
+                                📍 9 Clinics
+                            </div>
+
+                            <div class="badge">
+                                📅 Same-Day Appointments
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <!-- Right Side -->
+
+                    <div>
+
+                        <div class="hero-image">
+
+                            <img
+                                src="assets/hero-doctor.webp"
+                                alt="Orthopaedic doctor consulting patient"
+                                width="700"
+                                height="700">
+
+                        </div>
+
+                    
+
+                        <!-- Consultation Form -->
+
+                        <div class="form-card">
+
+                            <!-- Form Container -->
+
+                            <div id="formContainer">
+
+                                <h2>
+                                    Book Your Consultation
+                                </h2>
+
+                                <p>
+                                    Fill in your details and our care team
+                                    will contact you shortly.
+                                </p>
+
+                                <form id="consultationForm">
+
+                                    <div class="field">
+
+                                        <label for="name">
+                                            Full Name
+                                        </label>
+
+                                        <input
+                                            type="text"
+                                            id="name"
+                                            placeholder="Enter your name"
+                                            required>
+
+                                    </div>
+
+                                    <div class="field">
+
+                                        <label for="phone">
+                                            Phone Number
+                                        </label>
+
+                                        <input
+                                            type="tel"
+                                            id="phone"
+                                            maxlength="10"
+                                            placeholder="10-digit mobile number"
+                                            required>
+
+                                    </div>
+
+                                    <button
+                                        type="submit"
+                                        class="cta-btn">
+
+                                        Book Consultation
+
+                                    </button>
+
+                                    <p class="note">
+
+                                        Your information is secure and will
+                                        only be used to schedule your consultation.
+
+                                    </p>
+
+                                </form>
+
+                            </div>
+
+                            <!-- Success Message -->
+
+                            <div
+                                class="success-message"
+                                id="successMessage">
+
+                                <h2>
+                                    ✅ Thank You!
+                                </h2>
+
+                                <p>
+
+                                    Your consultation request has been received.
+
+                                </p>
+
+                                <br>
+
+                                <p>
+
+                                    One of our patient coordinators will
+                                    contact you shortly.
+
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- ======================================================
+             TRUST SECTION
+        ======================================================= -->
+
+        <section class="trust">
+
+            <div class="container">
+
+                <div class="trust-grid">
+
+                    <div class="trust-card">
+
+                        <h3>
+
+                            9 Clinics
+
+                        </h3>
+
+                        <p>
+
+                            Convenient locations across Bengaluru
+                            for quick access to expert orthopaedic care.
+
+                        </p>
+
+                    </div>
+
+                    <div class="trust-card">
+
+                        <h3>
+
+                            Experienced Specialists
+
+                        </h3>
+
+                        <p>
+
+                            Trusted orthopaedic doctors with years of
+                            experience treating knee and back pain.
+
+                        </p>
+
+                    </div>
+
+                    <div class="trust-card">
+
+                        <h3>
+
+                            Trusted by Patients
+
+                        </h3>
+
+                        <p>
+
+                            Thousands of successful consultations with
+                            patient-first care and transparent treatment.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- ======================================================
+             PATIENT REVIEW
+        ======================================================= -->
+
+        <section class="review">
+
+            <div class="container">
+
+                <div class="review-box">
+
+                    <div class="stars">
+
+                        ★★★★★
+
+                    </div>
+
+                    <p>
+
+                        "Booking my consultation took less than a minute.
+                        The doctor clearly explained the reason for my knee
+                        pain and suggested the right treatment. Highly
+                        recommended."
+
+                    </p>
+
+                    <br>
+
+                    <strong>
+
+                        — Rajesh M., Bengaluru
+
+                    </strong>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+        <!-- ======================================================
+         FOOTER
+    ======================================================= -->
+
+    <footer>
+
+        <div class="container">
+
+            <p>
+
+                © 2026 OrthoNow. Helping Bengaluru Move Pain-Free.
+
+            </p>
+
+        </div>
+
+    </footer>
+
+    <!-- ======================================================
+         JAVASCRIPT
+    ======================================================= -->
+
+    <script>
+
+        /*
+        ==========================================================
+        Initialize dataLayer for Google Tag Manager
+        ==========================================================
+        */
+
+        window.dataLayer = window.dataLayer || [];
+
+        /*
+        ==========================================================
+        Get Form Elements
+        ==========================================================
+        */
+
+        const consultationForm = document.getElementById("consultationForm");
+
+        const formContainer = document.getElementById("formContainer");
+
+        const successMessage = document.getElementById("successMessage");
+
+        /*
+        ==========================================================
+        Form Submit
+        ==========================================================
+        */
+
+        consultationForm.addEventListener("submit", function (event) {
+
+            event.preventDefault();
+
+            const patientName = document
+                .getElementById("name")
+                .value
+                .trim();
+
+            const phoneNumber = document
+                .getElementById("phone")
+                .value
+                .trim();
+
+            /*
+            ======================================================
+            Validation
+            ======================================================
+            */
+
+            const phoneRegex = /^[6-9]\d{9}$/;
+
+            if (patientName.length < 3) {
+
+                alert("Please enter your full name.");
+
+                return;
+
+            }
+
+            if (!phoneRegex.test(phoneNumber)) {
+
+                alert("Please enter a valid 10-digit Indian mobile number.");
+
+                return;
+
+            }
+
+            /*
+            ======================================================
+            GTM DataLayer Push
+            ======================================================
+            */
+
+            window.dataLayer.push({
+
+                event: "consultation_form_submitted",
+
+                patient_name: patientName,
+
+                phone_number: phoneNumber,
+
+                page_name: "orthonow_consultation_landing",
+
+                city: "Bengaluru"
+
+            });
+
+            /*
+            ======================================================
+            Console Log
+            Useful during interview demonstration
+            ======================================================
+            */
+
+            console.log("Current dataLayer:");
+
+            console.log(window.dataLayer);
+
+            /*
+            ======================================================
+            Thank You State
+            ======================================================
+            */
+
+            formContainer.style.display = "none";
+
+            successMessage.style.display = "block";
+
+            /*
+            ======================================================
+            Reset Form
+            ======================================================
+            */
+
+            consultationForm.reset();
+
+        });
+
+    </script>
+
+</body>
+
+</html>
