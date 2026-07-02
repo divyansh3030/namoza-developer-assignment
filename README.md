@@ -1,3 +1,4 @@
+
 # Namoza Developer Assignment
 
 **Candidate:** Divyansh Kakkar  
